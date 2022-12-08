@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--Standard Setup-->
+    <meta charset="utf-8" lang="pt-br" />
+    <title>Trilha Asteca</title>
+    <link href="Configuracoes/Estilizacao.css" rel="stylesheet" id="CSS-Code">
+    <link rel="icon" href="Configuracoes/IconPawn.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Importing Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!--Actual Body-->
+    <div id="internal_body">
+        <!--Top Section-->
+        <div id="top">Astecas</div>
+        <!--Main Section-->
+        <main>
+            <!-- Board Area (Left)-->
+            <section id="left">
+                <div id="board">
+
+                </div>
+            </section>
+
+            <!-- Playable Area (right)-->
+            <section id="right">
+
+                <!--Where the player chooses a pawn (and may check the rules)-->
+                <div id="SetUpScreen">
+                    <h1 style="font-size: 1.2em">Bem-vindo a Trilha Asteca!</h1><br />
+                    <label>Escolha uma cor para seu peão...</label><br />
+                    <form id="PawnChoice">
+                        <label>
+                            <input type="radio" name="option" style="grid-area: space1;" id="YPchosen">
+                            <img src="Configuracoes/YellowPawn.png" alt="Amarelo" width="100" style="width: 10vh">
+                        </label>
+
+                        <label>
+                            <input type="radio" name="option" style="grid-area: space2;" id="RPchosen">
+                            <img src="Configuracoes/RedPawn.png" alt="Vermelho" width="100" style="width: 10vh">
+                        </label>
+
+                        <label>
+                            <input type="radio" name="option" style="grid-area: space3;" id="PPchosen">
+                            <img src="Configuracoes/PurplePawn.png" alt="Roxo" width="100" style="width: 10vh">
+                        </label>
+
+                        <label>
+                            <input type="radio" name="option" style="grid-area: space4;" id="BPchosen">
+                            <img src="Configuracoes/BluePawn.png" alt="Azul" width="100" style="width: 10vh">
+                        </label>
+
+                    </form>
+                    <div>
+                        <label>Já leu as regras? Caso não, <a href="Configuracoes/Regras.html" target="_self" style="color: darkorange;">aperte aqui</a>.</label>
+                    </div>
+                    <input type="button" onclick="setTimeout(Start, 1000);" value="Iniciar Jogo!" id="startGameButton" style="margin-bottom: 8vh;">
+                    <div id="NoPawnSelectedWarning"><br /><br />Nenhum peão foi escolhido (ou houve um erro). Por favor, selecione uma opção ou reinicie a página.</div>
+                </div>
+
+                <!--Where the user appears-->
+                <div id="PlayerStatusBar">
+                    <div id="statusBarImage">
+
+                    </div>
+                    <div id="statusBarInfo">
+
+                    </div>
+                </div>
+
+                <!--Dice-->
+                <div style="font-size: 1.25em; display: none;" id="rollTheDice">Rode o Dado para começar...</div>
+                <div id="Dice" onclick="PlayDice();" style="display: none;">
+                    <img src="Configuracoes/Dice1.png" alt="Dice" width="125">
+                </div>
+
+                <!--<input onclick="EndGame()" type="button" value="REMOVE ME WHEN POSSIBLE" style="margin: 2em auto;">-->
+
+                <!--Whenever an AI is playing, this is shown (shows its status, if it gets the question right or not), etc.-->
+                <div id="WaitingScreen">
+                    <div id="AI-Thinking">Por favor, aguarde enquanto o jogador atual responde a uma pergunta...</div>
+                </div>
+
+                <!--Shows whenever it's the players turn-->
+                <div id="PlayingScreen">
+
+                    <!--Question card's display and inner HTML change according to needs-->
+                    <form id="question-card" style="display: none;">
+
+                        <!--Question Skeleton-->
+                        <label id="text">Question</label><br />
+                        <img id="image" alt="question image" width="400" style="width: 70%"><br />
+                        <label id="opt1"><input type="radio" name="option" />Opção 1</label><br />
+                        <label id="opt2"><input type="radio" name="option" />Opção 2</label><br />
+                        <label id="opt3"><input type="radio" name="option" />Opção 3</label><br />
+                        <label id="opt4"><input type="radio" name="option" />Opção 4</label><br />
+                        <input type="button" value="Analisar" onclick="AnalyseAnswer();" id="analyseButton">
+
+                    </form>
+
+                </div>
+
+                <!--Shows whenever you or a pawn goes back due to an Effect Tile -->
+                <div id="EffectMessage" style="display: none;">
+                    Aiii! Volte x casas! ;)
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <!--Importing JS-->
+    <script src="Configuracoes/Funcoes.js"></script>
+</body>
+</html>
