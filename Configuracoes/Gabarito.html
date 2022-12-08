@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <!--Standard Setup-->
+    <meta charset="utf-8" lang="pt-br" />
+    <title>Trilha Asteca - Gabarito</title>
+    <link rel="icon" href="IconPawn.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: linear-gradient(270deg, #efca74, #eebf52, #efca74);
+        }
+
+        main {
+            /*Text*/
+            font-family: "Roboto Mono", 'Times New Roman', Times, serif;
+            font-size: 1.15em;
+            /*Page*/
+            background-color: #ffffff;
+            margin: 5vh 10vw;
+            min-height: 20vh;
+            box-shadow: 0.25em 0.25em 20px rgba(0, 0, 0, 0.50), -0.25em -0.25em 20px rgba(0, 0, 0, 0.50);
+            padding: 1.5em;
+        }
+
+        hr{
+            border: 2px solid darkorange; 
+            background-color: darkorange;
+        }
+
+        h1 {
+            text-align: center
+        }
+
+        h2 {
+            text-align: center
+        }
+
+        .question-card {
+            transform: scale(0.9);
+            text-align: center;
+            margin: 4em;
+            border: rgba(0, 0, 0, 0.30);
+            border-radius: 10%;
+            box-shadow: 0 -0.25em 20px rgba(0, 0, 0, 0.20), 0 0.25em 20px rgba(0, 0, 0, 0.20), 0.25em 0 20px rgba(0, 0, 0, 0.20), 0.25em 0 20px rgba(0, 0, 0, 0.20);
+            padding: 1%;
+            padding-top: 10%;
+            padding-bottom: 10%;
+            font-size: 0.9em;
+            background-color: #ffffff;
+            font-family: 'Roboto Mono','Times New Roman', Times, serif;
+        }
+
+        .InputRadio
+        {
+            margin: 2% 0;
+        }
+
+        .Answer
+        {
+            color: darkorange;
+            font-weight: 800;
+            font-size: 1.3em;
+            margin-top: 10%;
+        }
+
+        .image {
+            border: solid black thin;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <br />
+        <hr />
+        <h1>Gabarito</h1>
+        <hr />
+        <label><input type="checkbox" checked onclick="document.querySelectorAll('.Answer').forEach((answer) => { if (answer.style.display == 'block') answer.style.display = 'none'; else answer.style.display = 'block';})" /> Mostrar Respostas</label>
+
+    </main>
+    <script src="AveragePage.js" charset="utf-8"></script>
+</body>
+</html>
